@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Result Page</title>
+	<script>
+		function displayInput() {
+			var urlParams = new URLSearchParams(window.location.search);
+			var input = urlParams.get('input');
+			document.getElementById("result").innerHTML = "Input: " + input;
+		}
+	</script>
+</head>
+<body onload="displayInput()">
+	<h2>Result:</h2>
+	<p id="result"></p>
+</body>
+</html>

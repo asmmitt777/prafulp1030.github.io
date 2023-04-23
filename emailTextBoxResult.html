@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Next Page</title>
+  </head>
+  <body>
+    <p>Entered email: <span id="capturedEmail"></span></p>
+    
+    <script>
+      var capturedEmail = localStorage.getItem("email");
+      document.getElementById("capturedEmail").innerHTML = capturedEmail;
+    </script>
+  </body>
+</html>

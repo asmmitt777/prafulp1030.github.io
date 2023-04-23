@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Integer Input</title>
+	<script>
+		function validateInput() {
+			var input = document.getElementById("inputField").value;
+			if(input.length != 16) {
+				alert("Please enter 16 integer values.");
+				return false;
+			}
+			if(!/^[0-9]+$/.test(input)) {
+				alert("Please enter only integer values.");
+				return false;
+			}
+			return true;
+		}
+	</script>
+	<style>
+		.reg {
+            margin-top: 120px;
+            margin-left: 500px;
+            margin-right: 500px;
+            height: 150px;
+            width: 700px;
+            background-color: rgb(130, 161, 146);
+            border: 20px;
+            text-align: center;
+            color: navy;
+            border-radius: 20px;
+        }
+	</style>
+</head>
+<body>
+	<form class="reg" action="creditCardTextboxresult.html" onsubmit="return validateInput()">
+		<h3>Requirement: Credit Card or Debit Card Accepted 16 digit Int Number</h3>
+		<label for="inputField">Enter 16 integer values:</label><br>
+		<input type="text" id="inputField" name="inputField"><br><br>
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Display input values</title>
+</head>
+<body>
+	<h2>The input values you entered are:</h2>
+	<script type="text/javascript">
+		var inputValues = decodeURIComponent(window.location.search.substring(1)).split('=')[1];
+		document.write(inputValues);
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Integer Input</title>
+	<script>
+		function validateInput() {
+			var input = document.getElementById("inputField").value;
+			if(input.length != 10) {
+				alert("Please enter 10 integer values.");
+				return false;
+			}
+			if(!/^[0-9]+$/.test(input)) {
+				alert("Please enter only integer values.");
+				return false;
+			}
+			return true;
+		}
+	</script>
+	<style>
+		form
+		{
+			background-color: rgba(70, 117, 125, 0.427);
+			color:rgba(24, 24, 239, 0.861);
+			margin-top:150px;
+			margin-left: 500px;
+			margin-right: 500px;
+			text-align: center;
+			height: 250px;
+			width: 600px;
+			border-radius: 20px;
+		
+		}
+	</style>
+</head>
+<body>
+	<form action="mobiletextboxResult.html" onsubmit="return validateInput()">
+		<br>
+		<h3>Requirement: Mobile Number Text Box Accepted 10 digit int number</h3>
+		<label for="inputField">
+			<h4>Enter 10 integer values:</h4></label>
+		Mobile Number : <input type="text" id="inputField" name="inputField"><br><br>
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>

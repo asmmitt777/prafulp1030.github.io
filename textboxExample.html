@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text Box Example</title>
+	<script>
+		function validate() {
+			var input = document.getElementById("textbox").value;
+			var pattern = /^[A-Za-z]{6,10}$/;
+			if (pattern.test(input)) {
+				window.location.href = "textboxResult.html?input=" + input;
+			} else {
+				alert("Please enter a valid input (6-10 letters, upper or lowercase only).");
+			}
+		}
+	</script>
+	<style>
+		
+		div
+		{
+			background-color: rgba(188, 188, 236, 0.427);
+			color:rgba(24, 24, 239, 0.861);
+			margin-top:150px;
+			margin-left: 500px;
+			margin-right: 500px;
+			text-align: center;
+			height: 200px;
+			width: 500px;
+			border-radius: 15px;
+		
+		}
+	</style>
+</head>
+<body>
+	<div class="name">
+	<h2>Enter Any Text:</h2>
+	<input type="text" id="textbox">
+	<br> <br>
+	<button onclick="validate()">Submit</button>
+
+
+
+</div>
+</body>
+</html>
