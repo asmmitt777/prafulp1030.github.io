@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Page</title>
+    <style>
+        form {
+            background-color: rgba(146, 112, 232, 0.427);
+            color: rgba(55, 10, 219, 0.861);
+            margin-top: 150px;
+            margin-left: 400px;
+            margin-right: 500px;
+            text-align: center;
+            height: 200px;
+            width: 500px;
+            border-radius: 20px;
+            font-size: medium;
+        }
+
+        p {
+            margin-left: 650px;
+        }
+        
+        .rdata2
+        {
+            margin-left: 350px;
+            color: rgb(22, 149, 228);
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <br>
+        <h2>Login Functionality with Max 5 Attempts</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="submit" value="Login">
+    </form>
+
+        <h1 class="rdata2"> <span id="result"></span> </h1> 
+    </p>
+   
+
+    <script>
+        var attempts = 0;
+        var maxAttempts = 5;
+        var blockedTime = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+
+        document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var username = document.querySelector('#username').value;
+            var password = document.querySelector('#password').value;
+            if (username === 'softech' && password === 'softech@123') {
+                // Successful login
+                var result = "User is on Home Page";
+                document.getElementById("result").innerHTML = result;
+
+            } else {
+                // Incorrect login credentials
+                attempts++;
+                if (attempts >= maxAttempts) {
+                    // Block account
+                    document.querySelector('#username').disabled = true;
+                    document.querySelector('#password').disabled = true;
+                    document.querySelector('input[type="submit"]').disabled = true;
+
+                    var result = "Your account has been blocked for the next 24 hours.";
+                    document.getElementById("result").innerHTML = result;
+
+                    setTimeout(function () {
+                        document.querySelector('#username').disabled = false;
+                        document.querySelector('#password').disabled = false;
+                        document.querySelector('input[type="submit"]').disabled = false;
+                        attempts = 0;
+                    }, blockedTime);
+                } else {
+                    // Incorrect login credentials, but not yet blocked
+                    var result = "Incorrect username or password. You have " + (maxAttempts - attempts) + " attempts remaining.";
+                   
+                    document.getElementById("result").innerHTML = result;
+                   
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

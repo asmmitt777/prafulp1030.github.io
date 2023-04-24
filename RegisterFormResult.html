@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Register Details </title>
+
+    <style>
+        div {
+            margin-top: 100px;
+            margin-left: 500px;
+            background-color: rgb(183, 166, 183);
+            height: 350px;
+            width: 450px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        h5
+        {
+            text-align: start;
+        }
+        h3{
+            text-align: start;
+            color: rgb(8, 34, 230);
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="result" onload="displayInput()">
+
+        <table>
+            <tr>
+                <td>
+                    <h5>Entered First Name value is :</h5>
+                </td>
+                <td>
+                    <h3 >
+                        <p id="fname"></p>
+                    </h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>Entered Last Name value is :</h5>
+                </td>
+                <td>
+                    <h3>
+                        <p id="lname"></p>
+                    </h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>Entered Address value is :</h5>
+                </td>
+                <td>
+                    <h3>
+                        <p id="address"></p>
+                    </h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>Entered Mobile Number value is :</h5>
+                </td>
+                <td>
+                    <h3>
+                        <p id="mobileNo"></p>
+                    </h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>Entered Email Id value is :</h5>
+                </td>
+                <td>
+                    <h3>
+                        <p id="emaildId"></p>
+                    </h3>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script>
+    var fname = localStorage.getItem("fname");
+    document.getElementById("fname").innerHTML = fname;
+
+    var lname = localStorage.getItem("lname");
+    document.getElementById("lname").innerHTML = lname;
+
+    var address = localStorage.getItem("address");
+    document.getElementById("address").innerHTML = address;
+
+    var mobileNo = localStorage.getItem("mobileNo");
+    document.getElementById("mobileNo").innerHTML = mobileNo;
+
+    var emaildId = localStorage.getItem("emaildId");
+    document.getElementById("emaildId").innerHTML = emaildId;
+</script>
+
+</html>

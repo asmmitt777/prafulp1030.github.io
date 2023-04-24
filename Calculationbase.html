@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Addition Program</title>
+    <script>
+        function addNumbers() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var result = num1 + num2;
+            document.getElementById("result").innerHTML = result;
+        }
+        function multipleNumbers() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var result = num1 * num2;
+            document.getElementById("result").innerHTML = result;
+        }
+        function subNumbers() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var result = num1 - num2;
+            document.getElementById("result").innerHTML = result;
+        }
+        function calculateDiscount() {
+            var price = parseFloat(document.getElementById("price").value);
+            var discount = parseFloat(document.getElementById("discount").value);
+            var discountedPrice = price - (price * discount / 100);
+            document.getElementById("result4").innerHTML = "Discounted Price: $" + discountedPrice.toFixed(2);
+        }
+    </script>
+    <style>
+        .arithemetic {
+            background-color: rgba(70, 117, 125, 0.427);
+            color: rgba(24, 24, 239, 0.861);
+            margin-top: 150px;
+            margin-left: 100px;
+            margin-right: 100px;
+            text-align: center;
+            height: 250px;
+            width: 500px;
+            border-radius: 20px;
+
+        }
+
+        .discount {
+            background-color: rgba(236, 191, 45, 0.427);
+            color: rgba(24, 24, 239, 0.861);
+            margin-top: 150px;
+            margin-left: 10px;
+            margin-right: 50px;
+            text-align: start;
+            height: 250px;
+            width: 500px;
+            border-radius: 20px;
+        }
+
+        label {
+            margin-left: 50px;
+        }
+
+        input {
+            margin-left: 10px;
+            height: 25px;
+            width: 250px;
+
+        }
+
+        .data {
+            margin-left: 150px;
+        }
+
+        .rdata {
+            margin-left: 10px;
+        }
+
+        .dis1 {
+            margin-left: 80px;
+        }
+
+        .dis2 {
+            margin-left: 30px;
+        }
+
+        .btn {
+            margin-left: 210px;
+            height: 30px;
+            width: 150px;
+            background-color: aliceblue;
+        }
+
+        h2 {
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+
+        #result4 {
+
+            margin-left: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <div class="arithemetic">
+                    <h1>Calculation Program</h1>
+                    <label for="num1">Number 1:</label>
+                    <input type="text" id="num1"><br>
+                    <br>
+                    <label for="num2">Number 2:</label>
+                    <input type="text" id="num2"><br>
+                    <br>
+                    <table class="data">
+                        <tr>
+                            <td>
+                                <button onclick="addNumbers()">Add</button><br>
+
+                            </td>
+                            <td>
+                                <button onclick="multipleNumbers()">Multiplication</button><br>
+
+                            </td>
+
+                            <td>
+                                <button onclick="subNumbers()">Substraction</button><br>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="rdata">Result: <span id="result"></span></p>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </div>
+            </td>
+            <td>
+                <div class="discount">
+
+                    <h2>Discount on Price Program</h2>
+                    <label for="price">Price:</label>
+                    <input class="dis1" type="text" id="price" name="price"><br><br>
+                    <label for="discount">Discount (%):</label>
+                    <input class="dis2" type="text" id="discount" name="discount"><br><br>
+                    <button class="btn" onclick="calculateDiscount()">Calculate Discount</button>
+                    <p id="result4"></p>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

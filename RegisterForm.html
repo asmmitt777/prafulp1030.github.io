@@ -19,19 +19,20 @@
             color: navy;
             border-radius: 20px;
         }
-        label
-        {
+
+        label {
             text-decoration-color: cadetblue;
-            
+
         }
-        input{
+
+        input {
             border-radius: 20px;
             width: 250px;
             align-items: center;
             height: 30px;
         }
-        button
-        {
+
+        button {
             height: 35px;
             width: 160px;
             border-radius: 10px;
@@ -39,50 +40,69 @@
             background-color: rgb(150, 234, 161);
         }
     </style>
+    <script>
+        function validate() {
+            var fname = document.getElementById("fname").value;
+            localStorage.setItem("fname", fname);
+
+            var lname = document.getElementById("lname").value;
+            localStorage.setItem("lname", lname);
+
+            var address = document.getElementById("address").value;
+            localStorage.setItem("address", address);
+
+            var mobileNo = document.getElementById("mobileNo").value;
+            localStorage.setItem("mobileNo", mobileNo);
+
+            var emaildId = document.getElementById("emaildId").value;
+            localStorage.setItem("emaildId", emaildId);
+
+            window.location.href = "RegisterFormResult.html";
+        }
+    </script>
 </head>
 
 <body>
 
     <div class="reg">
 
-        <form action="post" class="register">
-            <h1>Register a new Employee</h1>
-            <br>
+        <h1>Register a new Employee</h1>
+        <br>
 
-            <div class="fname">
-                <label for="fname">First Name : </label>
-                <input type="text" id="fname" />
-            </div>
-            <br>
-            <br>
-            <div class="lname">
-                <label for="fname">Last Name : </label>
-                <input type="text" id="lname" />
-            </div>
-            <br>
-            <br>
-            <div class="address">
-                <label for="fname"> Address : </label>
-                <input type="text" id="address" />
-            </div>
+        <div class="fname">
+            <label for="fname">First Name : </label>
+            <input type="text" id="fname" />
+        </div>
+        <br>
+        <br>
+        <div class="lname">
+            <label for="fname">Last Name : </label>
+            <input type="text" id="lname" />
+        </div>
+        <br>
+        <br>
+        <div class="address">
+            <label for="fname"> Address : </label>
+            <input type="text" id="address" />
+        </div>
 
-            <br>
-            <br>
-            <div class="mobileNO">
-                <label for="fname">Mobile Number : </label>
-                <input type="text" id="mobileNo" />
-            </div>
-            <br>
-            <br>
-            <div class="emaildId">
-                <label for="fname">Email Id : </label>
-                <input type="text" id="emaildId" />
-            </div>
-            <br>
-            <div>
-                <button type="submit">Register</button>
-            </div>
-        </form>
+        <br>
+        <br>
+        <div class="mobileNO">
+            <label for="fname">Mobile Number : </label>
+            <input type="text" id="mobileNo" />
+        </div>
+        <br>
+        <br>
+        <div class="emaildId">
+            <label for="fname">Email Id : </label>
+            <input type="text" id="emaildId" />
+        </div>
+        <br>
+        <div>
+            <button type="submit" onclick="validate()">Register</button>
+        </div>
+
     </div>
 
 </body>
