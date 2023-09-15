@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Hobby Center Registeration Form </title>
+
+    <style>
+        body {
+            background-color: rgb(225, 228, 227);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            margin-top: 10px;
+            margin-left: 450px;
+            margin-right: 400px;
+
+            background-color: rgb(184, 173, 173);
+
+        }
+
+        /* Create two equal columns that float next to each other */
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Add some spacing */
+        .section {
+            margin: 8px;
+        }
+
+        /* Style the checkboxes */
+        .checkbox-label {
+            display: block;
+            margin-bottom: 1px;
+        }
+        #errorMessages
+        {
+            margin-left: 500px;
+            margin-top: 50px;
+        }
+        h2
+        {
+            text-align: center;
+            padding: 10px;
+            color: rgb(18, 41, 241);
+        }
+</style>
+
+</head>
+
+<body>
+    <h2>Hobby Center Application : </h2>
+    <div id="errorMessages" style="color: red;"></div>
+
+    <div class="row">
+    
+        <div class="column">
+          
+            <div class="section">
+                <h4>About Me</h4>
+                <label for="email" class="checkbox-label">Email Id:</label>
+                &ensp; &ensp; &ensp; &ensp; &ensp; <input type="email" name="email" id="email"><br>
+              
+
+                <label for="fname" class="checkbox-label">First Name:</label>
+                &ensp; &ensp; &ensp; &ensp; &ensp;<input type="text" name="fname" id="fname" min="4" max="10"><br>
+
+                <label for="lname" class="checkbox-label">last Name:</label>
+                &ensp; &ensp; &ensp; &ensp; &ensp;<input type="text" name="lname" id="lname" min="3" max="8"><br>
+
+                <label for="age" class="checkbox-label">Age*:</label>
+                &ensp; &ensp; &ensp; &ensp; &ensp;<input type="text" name="age" id="age" min="1" max="3"><br>
+
+                <label for="offer" class="checkbox-label">
+                    <input type="checkbox" name="offer" id="offer"> interested in offers for senior citizens.
+                </label><br>
+
+                <label for="city" class="checkbox-label">City:</label>
+                &ensp; &ensp; &ensp; &ensp; &ensp;<input type="text" name="city" id="city" min="2" max="14"><br>
+
+                <label for="state" class="checkbox-label">state:</label>
+                &ensp; &ensp; &ensp; &ensp; &ensp;<input type="text" name="state" id="state" min="4" max="10"><br>
+
+                <label for="pincode" class="checkbox-label">Pincode:</label>
+                &ensp; &ensp; &ensp; &ensp; &ensp;<input type="text" name="pincode" id="pincode" min="6" max="6"><br>
+                <br>
+                <br>
+                &ensp; &ensp; &ensp; &ensp; &ensp;<input type="button" id="submitBtn" value="Submit">&ensp;&ensp;<input
+                    type="button" value="Reset">
+            </div>
+        </div>
+        <div class="column">
+            <div class="section">
+                <h4>Interests</h4>
+                <label for="java" class="checkbox-label">
+                    <input type="checkbox" name="java" id="java"> Java
+                </label><br>
+
+                <label for="software-testing" class="checkbox-label">
+                    <input type="checkbox" name="software-testing" id="software-testing"> Software Testing
+                </label><br>
+
+                <label for="cricket" class="checkbox-label">
+                    <input type="checkbox" name="cricket" id="cricket"> Cricket
+                </label><br>
+
+                <label for="movie" class="checkbox-label">
+                    <input type="checkbox" name="movie" id="movie"> Watching Movies
+                </label><br>
+
+                <label for="tennis" class="checkbox-label">
+                    <input type="checkbox" name="tennis" id="tennis"> Tennis
+                </label><br>
+
+                <label for="tv" class="checkbox-label">
+                    <input type="checkbox" name="tv" id="tv"> TV
+                </label><br>
+
+                <label for="book" class="checkbox-label">
+                    <input type="checkbox" name="book" id="book"> Reading Books
+                </label><br>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <b>* Mandatory Fields</b>
+    <br>
+    <b>** Only above 60 can avail offers for senior citizens.</b>
+
+
+    <script>
+        // Get the submit button by its ID
+        var submitBtn = document.getElementById("submitBtn");
+
+        // Add a click event listener to the submit button
+        submitBtn.addEventListener("click", function () {
+            // Collect form values
+            var email = document.getElementById("email").value;
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var age = document.getElementById("age").value;
+            var offer = document.getElementById("offer").checked;
+            var city = document.getElementById("city").value;
+            var state = document.getElementById("state").value;
+            var pincode = document.getElementById("pincode").value;
+            var javaCheckbox = document.getElementById("java");
+            var softwareTestingCheckbox = document.getElementById("software-testing");
+
+
+            // Validate form fields
+            var errorMessages = [];
+            if (email === "") {
+                errorMessages.push("Email is required.");
+            }
+            if (fname === "") {
+                errorMessages.push("First Name is required.");
+            }
+            if (lname === "") {
+                errorMessages.push("Last Name is required.");
+            }
+            if (age === "") {
+                errorMessages.push("Age is required.");
+            }
+            if (isNaN(age) || parseInt(age) <= 0) {
+                errorMessages.push("Age must be a valid positive number.");
+            }
+            if (city === "") {
+                errorMessages.push("City is required.");
+            }
+            if (state === "") {
+                errorMessages.push("State is required.");
+            }
+            if (pincode === "") {
+                errorMessages.push("Pincode is required.");
+            }
+            if (isNaN(pincode) || pincode.length !== 6) {
+                errorMessages.push("Pincode must be a valid 6-digit number.");
+            }
+
+
+
+
+            // Check if there are any errors
+            if (errorMessages.length > 0) {
+                // Display error messages
+                var errorMessagesDiv = document.getElementById("errorMessages");
+                errorMessagesDiv.innerHTML = errorMessages.join("<br>");
+            } else {
+                // No errors, proceed with redirection
+                var selectedInterests = [];
+                var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+                checkboxes.forEach(function (checkbox) {
+                    if (checkbox.id !== "tv" && checkbox.id !== "cricket") {
+                        selectedInterests.push(checkbox.name);
+                    }
+                });
+                window.location.href = "sporthobbyresult.html" +
+                    "?email=" + encodeURIComponent(email) +
+                    "&fname=" + encodeURIComponent(fname) +
+                    "&lname=" + encodeURIComponent(lname) +
+                    "&age=" + encodeURIComponent(age) +
+                    "&offer=" + encodeURIComponent(offer) +
+                    "&city=" + encodeURIComponent(city) +
+                    "&state=" + encodeURIComponent(state) +
+                    "&pincode=" + encodeURIComponent(pincode) +
+                    "&selectedInterests=" + encodeURIComponent(selectedInterests.join(', '));
+            }
+        });
+    </script>
+</body>
+
+</html>

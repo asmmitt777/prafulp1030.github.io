@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Hobby Result Page</title>
+
+    <style>
+        body
+        {
+            background-color: oldlace;
+        }
+
+        div
+        {
+            text-align: left;
+            margin-left: 500px;
+            margin-top: 100px;
+
+        }
+        li
+        {
+            margin-bottom: 10px;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <div>
+        
+    <h2>Form Data</h2>
+    <ul>
+        <li><strong>Email:</strong> <span id="email"></span></li>
+        <li><strong>First Name:</strong> <span id="fname"></span></li>
+        <li><strong>Last Name:</strong> <span id="lname"></span></li>
+        <li><strong>Age:</strong> <span id="age"></span></li>
+        <li><strong>Interested in offers for senior citizens:</strong> <span id="offer"></span></li>
+        <li><strong>City:</strong> <span id="city"></span></li>
+        <li><strong>State:</strong> <span id="state"></span></li>
+        <li><strong>Pincode:</strong> <span id="pincode"></span></li>
+
+      <li><strong>Selected Interests:</strong> <span id="selectedInterests"></span></li>
+
+    </ul>
+
+</div>
+    <script>
+        // Function to parse query parameters from the URL
+        function getQueryParam(paramName) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(paramName);
+        }
+
+        // Populate the HTML elements with query parameter values
+        document.getElementById("email").textContent = getQueryParam("email");
+        document.getElementById("fname").textContent = getQueryParam("fname");
+        document.getElementById("lname").textContent = getQueryParam("lname");
+        document.getElementById("age").textContent = getQueryParam("age");
+        document.getElementById("offer").textContent = getQueryParam("offer");
+        document.getElementById("city").textContent = getQueryParam("city");
+        document.getElementById("state").textContent = getQueryParam("state");
+        document.getElementById("pincode").textContent = getQueryParam("pincode");
+
+        function getCheckQueryParams() {
+        var params = {};
+        var queryString = window.location.search.substring(1);
+        var pairs = queryString.split('&');
+        for (var i = 0; i < pairs.length; i++) {
+            var pair = pairs[i].split('=');
+            params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+        }
+        return params;
+    }
+
+    // Get query parameters from the URL
+    var queryParams = getCheckQueryParams();
+
+    // Display the selected interests on the page
+    document.getElementById("selectedInterests").textContent = queryParams.selectedInterests || "";
+
+    </script>
+</body>
+
+</html>
